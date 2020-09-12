@@ -11,7 +11,8 @@ namespace CapaDatos
     public class Conexion
     {
 
-        private SqlConnection Conec = new SqlConnection("Server=PC-SYSTEM\\SQLEXPRESS;DataBase= Practica;Integrated Security=true");
+        private SqlConnection Conec = new SqlConnection("Data Source=PC-SYSTEM\\SQLEXPRESS;Initial Catalog=DbEvaluacion;Integrated Security=True");
+
 
         public SqlConnection AbrirConexion()
         {
@@ -26,5 +27,6 @@ namespace CapaDatos
                 Conec.Close();
             return Conec;
         }
+
     }
 }
