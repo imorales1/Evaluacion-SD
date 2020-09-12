@@ -25,7 +25,7 @@ namespace CapaDatos
             tabla.Load(dat);
 
             cmd.Parameters.Clear();
-
+            con.CerrarConexion();
             return tabla;
         }
 
@@ -39,6 +39,7 @@ namespace CapaDatos
             tabla.Load(dat);
 
             cmd.Parameters.Clear();
+            con.CerrarConexion();
 
             return tabla;
         }

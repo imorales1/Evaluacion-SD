@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CapaDatos
 {
     public class Conexion
     {
 
-        private SqlConnection Conec = new SqlConnection("Data Source=PC-SYSTEM\\SQLEXPRESS;Initial Catalog=DbEvaluacion;Integrated Security=True");
-
+        private SqlConnection Conec = new SqlConnection(ConfigurationManager.ConnectionStrings["cadena"].ConnectionString);
 
         public SqlConnection AbrirConexion()
         {

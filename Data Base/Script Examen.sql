@@ -17,3 +17,14 @@ inner join TblEmpresas E on E.EmpresaID = P.EmpresaID
 where P.FechaDeBaja IS NULL
 group by E.EmpresaCodigo, E.Nombre
 
+/*PROMEDIO*/
+
+declare @dato int 
+set @dato = (select  count(p.EmpresaID)
+from TblPuestos p 
+where p.FechaDeBaja is null)
+
+declare @total int
+set @total = (select  count(p.EmpresaID)
+from TblPuestos p )
+
