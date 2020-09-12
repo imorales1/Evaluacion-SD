@@ -1,6 +1,7 @@
-
+create database [DbEvaluacion]
 USE [master]
 GO
+
 
 IF EXISTS(SELECT 1 FROM SYS.databases WHERE  name = N'DbEvaluacion')
 DROP database DbEvaluacion
