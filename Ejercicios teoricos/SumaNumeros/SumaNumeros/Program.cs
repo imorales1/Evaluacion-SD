@@ -10,7 +10,7 @@ namespace SumaNumeros
             int total;
             Console.WriteLine("El resultado de la suma de los números del 1 al 10 es:");
             total = suma();
-            Console.WriteLine("SUMA {0}", total);
+            Console.WriteLine("SUMA: {0}", total);
             Console.ReadKey();
         }
 
