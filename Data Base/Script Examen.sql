@@ -17,14 +17,17 @@ inner join TblEmpresas E on E.EmpresaID = P.EmpresaID
 where P.FechaDeBaja IS NULL
 group by E.EmpresaCodigo, E.Nombre
 
-/*PROMEDIO*/
+/*PORCENTAJE DE PUESTOS DE BAJA POR EMPRESA*/
 
-declare @dato int 
-set @dato = (select  count(p.EmpresaID)
-from TblPuestos p 
-where p.FechaDeBaja is null)
 
-declare @total int
-set @total = (select  count(p.EmpresaID)
-from TblPuestos p )
+SELECT emp.Nombre, PuestosDeBaja / CONVERT(DECIMAL(10,2),TotalPuestos)*100 as Porcentaje
+FROM (
+select EmpresaID, count(FechaDeBaja) as PuestosDeBaja
+from TblPuestos 
+where FechaDeBaja is not null
+GROUP BY EmpresaID )a
+inner join (select EmpresaID, count(1) as TotalPuestos
+from TblPuestos
+GROUP BY EmpresaID) b on a.EmpresaID = b.EmpresaID 
+inner join TblEmpresas emp on emp.EmpresaID = b.EmpresaID
 
