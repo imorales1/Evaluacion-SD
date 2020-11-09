@@ -37,7 +37,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@Nombre", nombre);
             dat = cmd.ExecuteReader();
             tabla.Load(dat);
-
+              
             cmd.Parameters.Clear();
             con.CerrarConexion();
 

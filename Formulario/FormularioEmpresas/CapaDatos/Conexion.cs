@@ -17,7 +17,7 @@ namespace CapaDatos
         public SqlConnection AbrirConexion()
         {
             if (Conec.State == ConnectionState.Closed)
-                Conec.Open();
+                Conec.Open(); 
             return Conec;
         }
 
